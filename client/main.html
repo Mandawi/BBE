@@ -1,0 +1,114 @@
+<head>
+  <title>The BBE</title>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <script>
+      $(document).ready(function() {
+        $("body").css("background-color", "#6d3f3f");
+      });
+    </script>
+  <!-- Login is yet to be added using FACEBOOK AFTER SERVER IS CREATED -->
+     <h1>THE BBE</h1>
+     <hr>
+   <!-- Navigation bar, topnav is widely used -->
+   <div class="topnav">
+     <!-- put everything in an unordered list (ul) -->
+       <ul>
+       <li><a href="index-2.html" id="selected">Home</a></li>
+       <li><a href="books.html">Books</a></li>
+       <li><a class="modal-trigger" href="#modal1">Insert a new book</a></li>
+       <!-- The search bar is yet to be linked to a functioning JS -->
+       <button class="modal-trigger" href="#modal2"><span>Search </span></button>
+       </ul>
+   </div>
+   <hr>
+   <!-- Just information -->
+   <div id="paragraph">
+       <h2>V 0.0.0</h2>
+       <div class="container">
+                 <h2>Welcome to BBE!</h2>
+                 <h4>Latest books</h4>
+                 <ul class="collection">
+                           {{#each notes}} <!--for each loop that goes through the notes of the template called note-->
+                               {{>note}}
+                           {{/each}}
+                 </ul>
+     </div>
+   </div>
+   <script>
+         $(document).ready(function(){
+                $('.modal').modal();
+        });
+   </script>
+   {{>add}}
+   {{>search}}
+   <hr>
+</body>
+<template name="note"><!--create a template that includes text from the main.js-->
+            <li class="collection-item">{{text}}</li>
+</template>
+<template name="add">
+      <div id="modal1" class="modal">
+              <div class="modal-content">
+                  <h3>Add a book</h3>
+                  <form class="add-form">
+                      <input type="text" name="text" placeholder="Add book name...">
+                  </form>
+              </div>
+    </div>
+</template>
+<template name="search">
+      <div id="modal2" class="modal">
+              <div class="modal-content">
+                  <h3>Search for a [book]</h3>
+                  <form class="add-form">
+                      <input type="text" name="text" placeholder="Search using a book name...">
+                  </form>''
+                  <ul id="find">
+                    {{#each books}} <!--for each loop that goes through the notes of the template called note-->
+                        {{>note}}
+                    {{/each}}
+                  </ul>
+              </div>
+    </div>
+</template>
+<!-- <template name="searchit">
+      <div id="modal2" class="modal">
+              <div class="modal-content">
+                {{> EasySearch.Input index=notesIndex}}
+                <ul>
+                  {{#EasySearch.Each index=notesIndex}}
+                    <li>Name of the player: {{notes}}</li>
+                  {{/EasySearch.Each}}
+                </ul>
+              </div>
+    </div>
+</template> -->
+
+
+
+
+
+<!-- <template name="search">
+  <div class="page-header clearfix" id="searcher">
+    <h4 class="pull-left">Book</h4>
+    <div class="pull-right">
+      <input type="text" name="search" class="form-control" width="250px" placeholder="Find an album...">
+    </div>
+  </div>
+  <ul class="list-group">
+    {{#if searching}}
+      {{> loading}}
+    {{else}}
+      {{#each albums}}
+        <li class="list-group-item clearfix">
+          <span class="pull-left">{{notes}}</span>
+        </li>
+      {{else}}
+        <p class="alert alert-warning">Nothing found for {{query}}. Sorry, bub.</p>
+      {{/each}}
+    {{/if}}
+  </ul>
+</template> -->

@@ -1,0 +1,188 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+body {
+  /* No background color... added with jQuery */
+  background-image:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px);
+  font-family: "Open Sans", sans-serif;
+  padding: 5px 10px;
+  font-size: 18px;
+  margin: 0;
+  color: #000;
+}
+h1 {
+  /* The BBE */
+  font-family: "Merriweather", serif;
+  font-size: 32px;
+  color:white;
+  padding:10px;
+  background-color: #333;
+  background-image:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px);
+  text-align:center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius:100px;
+
+}
+#paragraph{
+  /* V 0.0.0 */
+  background-color:white;
+  border-radius:10px;
+  padding:10px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+hr {
+  /* Break lines used throught,
+  more formally: thematic breaks */
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+ul {
+  /* most of navigation bar */
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #333;
+  border-radius:10px;
+  background-image:repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px);
+}
+
+li {
+  /* individual lists in navigation bar */
+  float: left;
+}
+#selected{
+  /* how does the page's name look after you enter it */
+  background-color: #696969;
+}
+#Books{
+  /* more navigation bar */
+  background-color: #333;
+  background-image:
+    repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px);
+  color:white;
+  border-radius:10px;
+  padding:10px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#selected:hover{
+  /* what happens when you hover over an option */
+  background-color: red;
+}
+
+li a, .dropbtn {
+  /* for a dropdown list */
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  /* for a dropdown list */
+  background-color: red;
+}
+.search-container input[type=text] {
+  /* for search bar */
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 12px;
+  border: none;
+  width:500px;
+  background-color:white;
+  color:black;
+}
+.button {
+  /* for search button */
+  border-radius: 10px;
+  background-color: #333;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.button span {
+  /* for search button animation */
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.2s;
+}
+
+.button span:after {
+  /* for search button animation*/
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.2s;
+}
+
+.button:hover span {
+  /* for search button animation*/
+  padding-right: 10px;
+}
+
+.button:hover span:after {
+  /* for search button animation*/
+  opacity: 1;
+  right: 0;
+}
+.button:hover {
+  /* for search button animation*/
+  background-color:red;
+}
+footer {
+  /* sticks the footer down */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: left;
+  margin-left:10px;
+  font-family: "Open Sans", sans-serif;
+  font-size:5px;
+}
+.warning {
+  /* unused, but might be needed upon publish */
+  background-color: #ffffcc;
+  border-left: 10px solid #ffeb3b;
+}
+@media (min-width: 600px) {
+  /* for any screen smaller than 600px in width, such as a phone */
+  .search-container input[type=text] {
+    padding: 10px;
+    margin-top: 8px;
+    margin-left: 20px;
+    font-size: 12px;
+    border: none;
+    width:500px;
+    background-color:white;
+    color:black;
+  }
+}
